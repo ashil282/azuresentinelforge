@@ -1,0 +1,4 @@
+{"id": "evt-1", "source": "synthetic", "event_type": "process_execution", "actor": "powershell", "host": "lab-win", "message": "Synthetic encoded PowerShell indicator"}
+{"id": "evt-2", "source": "synthetic", "event_type": "authentication_failure", "actor": "sshd", "host": "lab-linux", "message": "Synthetic SSH auth failure"}
+{"id": "evt-3", "source": "synthetic", "event_type": "container_started_privileged", "actor": "docker", "host": "lab-docker", "message": "Synthetic privileged container start"}
+{"id": "evt-4", "source": "synthetic", "event_type": "cloud_credential_access", "actor": "unknown", "host": "lab-host", "message": "Synthetic credential access indicator"}

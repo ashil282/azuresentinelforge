@@ -1,0 +1,3 @@
+-r requirements.txt
+azure-identity>=1.15,<2
+azure-mgmt-resourcegraph>=8,<9

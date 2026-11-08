@@ -1,0 +1,73 @@
+{
+  "data_label": "synthetic",
+  "assets": [
+    {
+      "id": "st-demo",
+      "type": "storage",
+      "public_access": true,
+      "https_only": false,
+      "source": "synthetic"
+    },
+    {
+      "id": "nsg-demo",
+      "type": "network_security_group",
+      "inbound_rules": [
+        {
+          "source": "0.0.0.0/0",
+          "port": "22"
+        }
+      ],
+      "source": "synthetic"
+    },
+    {
+      "id": "disk-demo",
+      "type": "managed_disk",
+      "encryption_enabled": false,
+      "source": "synthetic"
+    },
+    {
+      "id": "vm-demo",
+      "type": "virtual_machine",
+      "managed_identity_enabled": false,
+      "source": "synthetic"
+    },
+    {
+      "id": "kv-demo",
+      "type": "key_vault",
+      "public_network_access_enabled": true,
+      "soft_delete_enabled": true,
+      "purge_protection_enabled": false,
+      "firewall_default_action": "Allow",
+      "source": "synthetic"
+    },
+    {
+      "id": "sql-server-demo",
+      "type": "sql_server",
+      "public_network_access_enabled": true,
+      "minimum_tls_version": "1.0",
+      "aad_only_authentication": false,
+      "source": "synthetic"
+    },
+    {
+      "id": "sql-db-demo",
+      "type": "sql_database",
+      "transparent_data_encryption_enabled": false,
+      "source": "synthetic"
+    },
+    {
+      "id": "aks-demo",
+      "type": "aks_cluster",
+      "private_cluster_enabled": false,
+      "local_accounts_enabled": true,
+      "network_policy_enabled": false,
+      "source": "synthetic"
+    },
+    {
+      "id": "app-demo",
+      "type": "app_service",
+      "https_only": false,
+      "minimum_tls_version": "1.0",
+      "source": "synthetic"
+    }
+  ]
+}

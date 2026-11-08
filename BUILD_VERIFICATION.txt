@@ -1,0 +1,15 @@
+AzureSentinelForge 0.3 verification — 2026-11-08
+
+Python unit/integration tests: PASS — 37 tests, 0 failures (python -m unittest discover -s tests -v).
+Python bytecode compilation: PASS — python -m compileall -q backend scripts tests.
+Synthetic demo loader: PASS — 9 labelled synthetic assets, 17 posture findings, 4 fixture events ingested, 4 alerts created.
+Database migration: PASS — copied existing local 0.2 database and confirmed policy_id, resource_type and control_ids columns are applied without replacing the original database.
+HTTP API smoke: PASS — live uvicorn process returned /health status=ok; policy catalog returned 20 checks; posture evaluation persisted a synthetic Key Vault finding and structured evidence.
+Azure collector safety guard: PASS — without AZURE_SUBSCRIPTION_ID, collector exits before making an Azure query.
+Azure Resource Graph live collection: NOT RUN — no live subscription/credential was supplied; normalizer behavior is covered by unit tests.
+Frontend dependency installation: BLOCKED — npm install --no-audit --no-fund timed out; no node_modules or lockfile was produced.
+Frontend TypeScript/Vite production build: NOT VERIFIED — global tsc invocation failed because React, React DOM, Vite client and their type declarations are not installed. This is an environment/dependency blocker, not a verified source build failure.
+Python lint: NOT RUN — Ruff is not installed in the environment.
+
+Safety boundary: all demo assets/events are synthetic; no Azure resources were provisioned or modified; SOAR remains dry-run/approval-record only.
+Frontend source syntax: PASS — TypeScript compiler parser accepted App.tsx, main.tsx and vite.config.ts. This is syntax-only and does not replace a dependency-backed typecheck or Vite build.

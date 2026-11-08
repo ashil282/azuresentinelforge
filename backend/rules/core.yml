@@ -1,0 +1,33 @@
+rules:
+  - id: suspicious_powershell
+    title: Suspicious PowerShell execution
+    severity: high
+    match: {event_type: process_execution, actor: powershell}
+    mitre: [T1059.001]
+
+  - id: ssh_auth_failure
+    title: SSH authentication failure
+    severity: medium
+    match: {event_type: authentication_failure}
+    mitre: [T1110]
+
+  - id: ssh_brute_force
+    title: Repeated SSH authentication failures
+    severity: high
+    match: {event_type: authentication_failure, actor: sshd}
+    threshold: 5
+    window_seconds: 300
+    group_by: host
+    mitre: [T1110.001]
+
+  - id: privileged_container
+    title: Privileged container started
+    severity: high
+    match: {event_type: container_started_privileged}
+    mitre: [T1610]
+
+  - id: cloud_credential_access
+    title: Cloud credential access indicator
+    severity: critical
+    match: {event_type: cloud_credential_access}
+    mitre: [T1552]
